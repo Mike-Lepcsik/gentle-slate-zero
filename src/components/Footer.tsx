@@ -1,104 +1,96 @@
-import { Button } from "@/components/ui/button";
-import { Separator } from "@/components/ui/separator";
-import { Leaf, Mail, Phone, MapPin, Facebook, Instagram, Twitter } from "lucide-react";
 
-export const Footer = () => {
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { Facebook, Instagram, Mail, Phone } from 'lucide-react';
+
+const Footer = () => {
   return (
-    <footer id="contact" className="bg-muted/50 pt-16 pb-8">
-      <div className="container px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-          {/* Brand */}
-          <div className="space-y-4">
-            <div className="flex items-center space-x-2">
-              <Leaf className="h-8 w-8 text-primary" />
-              <span className="text-2xl font-bold bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
-                Aura Naturelle
-              </span>
-            </div>
-            <p className="text-muted-foreground leading-relaxed">
-              Révélez votre beauté naturelle avec nos produits cosmétiques biologiques 
-              et respectueux de l'environnement.
+    <footer className="bg-audrey-cream py-12 border-t border-audrey-earth-light">
+      <div className="container-custom">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div>
+            <Link to="/" className="font-serif text-2xl text-audrey-earth-dark">
+              Audrey Tessier
+            </Link>
+            <p className="mt-4 text-audrey-text">
+              Especialista en bienestar holístico y peluquería consciente. Acompañamiento energético y emocional para reconectar contigo misma.
             </p>
-            <div className="flex space-x-3">
-              <Button variant="ghost" size="icon" className="hover:text-primary">
-                <Facebook className="h-5 w-5" />
-              </Button>
-              <Button variant="ghost" size="icon" className="hover:text-primary">
-                <Instagram className="h-5 w-5" />
-              </Button>
-              <Button variant="ghost" size="icon" className="hover:text-primary">
-                <Twitter className="h-5 w-5" />
-              </Button>
-            </div>
           </div>
-
-          {/* Navigation */}
-          <div className="space-y-4">
-            <h3 className="font-semibold text-lg">Navigation</h3>
+          
+          <div>
+            <h3 className="font-serif text-lg font-medium mb-4 text-audrey-earth-dark">Enlaces</h3>
             <ul className="space-y-2">
-              {["Accueil", "Produits", "À Propos", "Blog", "Contact"].map((item) => (
-                <li key={item}>
-                  <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">
-                    {item}
-                  </a>
-                </li>
-              ))}
+              <li>
+                <Link to="/" className="text-audrey-text hover:text-audrey-green-dark transition-colors">
+                  Inicio
+                </Link>
+              </li>
+              <li>
+                <Link to="/sobre-mi" className="text-audrey-text hover:text-audrey-green-dark transition-colors">
+                  Sobre mí
+                </Link>
+              </li>
+              <li>
+                <Link to="/servicios" className="text-audrey-text hover:text-audrey-green-dark transition-colors">
+                  Servicios
+                </Link>
+              </li>
+              <li>
+                <Link to="/testimonios" className="text-audrey-text hover:text-audrey-green-dark transition-colors">
+                  Testimonios
+                </Link>
+              </li>
+              <li>
+                <Link to="/contacto" className="text-audrey-text hover:text-audrey-green-dark transition-colors">
+                  Contacto
+                </Link>
+              </li>
             </ul>
           </div>
-
-          {/* Produits */}
-          <div className="space-y-4">
-            <h3 className="font-semibold text-lg">Nos Produits</h3>
-            <ul className="space-y-2">
-              {["Soins du Visage", "Soins du Corps", "Huiles Essentielles", "Savons Naturels", "Coffrets Cadeaux"].map((item) => (
-                <li key={item}>
-                  <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">
-                    {item}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Contact */}
-          <div className="space-y-4">
-            <h3 className="font-semibold text-lg">Contact</h3>
+          
+          <div>
+            <h3 className="font-serif text-lg font-medium mb-4 text-audrey-earth-dark">Contacto</h3>
             <div className="space-y-3">
-              <div className="flex items-center space-x-3 text-muted-foreground">
-                <Mail className="h-4 w-4 text-primary" />
-                <span className="text-sm">contact@auranaturelle.fr</span>
+              <div className="flex items-center gap-2">
+                <Mail size={18} className="text-audrey-green" />
+                <a href="mailto:info@audreytessier.es" className="text-audrey-text hover:text-audrey-green-dark transition-colors">
+                  info@audreytessier.es
+                </a>
               </div>
-              <div className="flex items-center space-x-3 text-muted-foreground">
-                <Phone className="h-4 w-4 text-primary" />
-                <span className="text-sm">+33 1 23 45 67 89</span>
+              <div className="flex items-center gap-2">
+                <Phone size={18} className="text-audrey-green" />
+                <a href="tel:+34600000000" className="text-audrey-text hover:text-audrey-green-dark transition-colors">
+                  +34 600 000 000
+                </a>
               </div>
-              <div className="flex items-center space-x-3 text-muted-foreground">
-                <MapPin className="h-4 w-4 text-primary" />
-                <span className="text-sm">Paris, France</span>
+              <div className="flex gap-4 mt-4">
+                <a href="https://instagram.com" target="_blank" rel="noreferrer" className="text-audrey-text hover:text-audrey-green-dark transition-colors">
+                  <Instagram size={20} />
+                </a>
+                <a href="https://facebook.com" target="_blank" rel="noreferrer" className="text-audrey-text hover:text-audrey-green-dark transition-colors">
+                  <Facebook size={20} />
+                </a>
               </div>
             </div>
           </div>
         </div>
-
-        <Separator className="mb-8" />
-
-        <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-          <p className="text-sm text-muted-foreground">
-            © 2024 Aura Naturelle. Tous droits réservés.
-          </p>
-          <div className="flex space-x-6 text-sm text-muted-foreground">
-            <a href="#" className="hover:text-foreground transition-colors">
-              Mentions Légales
-            </a>
-            <a href="#" className="hover:text-foreground transition-colors">
-              Confidentialité
-            </a>
-            <a href="#" className="hover:text-foreground transition-colors">
-              CGV
-            </a>
+        
+        <div className="mt-12 pt-6 border-t border-audrey-earth-light text-sm text-center text-audrey-text/80">
+          <div className="flex flex-col md:flex-row justify-center gap-4 md:gap-8">
+            <p>&copy; {new Date().getFullYear()} Audrey Tessier. Todos los derechos reservados.</p>
+            <div className="flex gap-4 justify-center">
+              <Link to="/aviso-legal" className="hover:text-audrey-green-dark transition-colors">
+                Aviso Legal
+              </Link>
+              <Link to="/privacidad" className="hover:text-audrey-green-dark transition-colors">
+                Política de Privacidad
+              </Link>
+            </div>
           </div>
         </div>
       </div>
     </footer>
   );
 };
+
+export default Footer;
